@@ -55,13 +55,11 @@ public class ImcController {
         }
     }
 
-    @CrossOrigin(origins = "http://localhost:15003/imc")
     @PostMapping
     public ResponseEntity<ImcDetails> postImc(@Valid @RequestBody ImcDetails imcDetails) {
         return ResponseEntity.ok(imcService.saveImc(imcDetails));
     }
 
-    @CrossOrigin(origins = "http://localhost:15003/imc")
     @GetMapping
     public ResponseEntity<List<ImcDetails>> getImcs() {
         return ResponseEntity.ok(imcService.listImcs());
